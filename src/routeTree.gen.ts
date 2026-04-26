@@ -9,8 +9,32 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as NjobRouteImport } from './routes/njob'
+import { Route as CraftRouteImport } from './routes/craft'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AgencyRouteImport } from './routes/agency'
 import { Route as IndexRouteImport } from './routes/index'
 
+const NjobRoute = NjobRouteImport.update({
+  id: '/njob',
+  path: '/njob',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CraftRoute = CraftRouteImport.update({
+  id: '/craft',
+  path: '/craft',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgencyRoute = AgencyRouteImport.update({
+  id: '/agency',
+  path: '/agency',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +43,72 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agency': typeof AgencyRoute
+  '/contact': typeof ContactRoute
+  '/craft': typeof CraftRoute
+  '/njob': typeof NjobRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agency': typeof AgencyRoute
+  '/contact': typeof ContactRoute
+  '/craft': typeof CraftRoute
+  '/njob': typeof NjobRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/agency': typeof AgencyRoute
+  '/contact': typeof ContactRoute
+  '/craft': typeof CraftRoute
+  '/njob': typeof NjobRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/agency' | '/contact' | '/craft' | '/njob'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/agency' | '/contact' | '/craft' | '/njob'
+  id: '__root__' | '/' | '/agency' | '/contact' | '/craft' | '/njob'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgencyRoute: typeof AgencyRoute
+  ContactRoute: typeof ContactRoute
+  CraftRoute: typeof CraftRoute
+  NjobRoute: typeof NjobRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/njob': {
+      id: '/njob'
+      path: '/njob'
+      fullPath: '/njob'
+      preLoaderRoute: typeof NjobRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/craft': {
+      id: '/craft'
+      path: '/craft'
+      fullPath: '/craft'
+      preLoaderRoute: typeof CraftRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agency': {
+      id: '/agency'
+      path: '/agency'
+      fullPath: '/agency'
+      preLoaderRoute: typeof AgencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +121,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgencyRoute: AgencyRoute,
+  ContactRoute: ContactRoute,
+  CraftRoute: CraftRoute,
+  NjobRoute: NjobRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
