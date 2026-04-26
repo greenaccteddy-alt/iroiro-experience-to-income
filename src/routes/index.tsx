@@ -29,21 +29,21 @@ const startItems = [
     description: "N잡의 출발점을 먼저 정리해보기",
     to: "/njob",
     icon: BookOpen,
-    external: false,
+    href: null,
   },
   {
     title: "N잡 마인드맵 작성",
     description: "내 방향을 그려보는 첫 단계",
-    to: "/njob",
+    to: null,
+    href: "https://njob-mindmap-iroiro.netlify.app/",
     icon: Map,
-    external: false,
   },
   {
     title: "1:1 코칭",
     description: "카카오채널로 바로 상담하기",
     to: "/contact",
     icon: MessageCircleMore,
-    external: false,
+    href: null,
   },
 ] as const;
 
@@ -53,28 +53,28 @@ const browseItems = [
     description: "Chipbirdie의 기록 둘러보기",
     to: "/njob",
     icon: PenSquare,
-    external: false,
+    href: null,
   },
   {
     title: "대행사",
     description: "블로그 소개와 연결된 작업 보기",
     to: "/agency",
     icon: ExternalLink,
-    external: false,
+    href: null,
   },
   {
     title: "공방",
     description: "플레이스 링크 대신 공방 페이지로 이동",
     to: "/craft",
     icon: Store,
-    external: false,
+    href: null,
   },
   {
     title: "일본어 수업",
     description: "카카오채널 문의로 이어지기",
     to: "/contact",
     icon: MessageCircleMore,
-    external: false,
+    href: null,
     logo: iroiroJapanese,
   },
   {
@@ -82,7 +82,7 @@ const browseItems = [
     description: "현재는 소개 페이지에서 먼저 보기",
     to: "/contact",
     icon: ExternalLink,
-    external: false,
+    href: null,
   },
 ] as const;
 
@@ -123,12 +123,11 @@ function HomePage() {
             {startItems.map((item) => {
               const Icon = item.icon;
 
-              return (
-                <Link
-                  key={item.title}
-                  to={item.to}
-                  className="group flex min-h-20 items-center justify-between gap-4 rounded-2xl border border-border bg-background px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-foreground/30 hover:shadow-soft"
-                >
+              const commonClassName =
+                "group flex min-h-20 items-center justify-between gap-4 rounded-2xl border border-border bg-background px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-foreground/30 hover:shadow-soft";
+
+              const content = (
+                <>
                   <div className="flex items-center gap-4">
                     <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand text-foreground">
                       <Icon className="h-5 w-5" />
@@ -141,6 +140,26 @@ function HomePage() {
                   <span className="text-sm text-muted-foreground transition-transform group-hover:translate-x-1">
                     바로가기
                   </span>
+                </>
+              );
+
+              if (item.href) {
+                return (
+                  <a
+                    key={item.title}
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={commonClassName}
+                  >
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <Link key={item.title} to={item.to} className={commonClassName}>
+                  {content}
                 </Link>
               );
             })}
