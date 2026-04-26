@@ -1,12 +1,13 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
+import iroiroMark from "../assets/iroiro-mark.jpg";
 
 const navItems = [
-  { to: "/", label: "Home" },
-  { to: "/njob", label: "N잡" },
+  { to: "/", label: "메인" },
+  { to: "/njob", label: "n잡 도전" },
   { to: "/agency", label: "대행사" },
   { to: "/craft", label: "공방" },
-  { to: "/contact", label: "Contact" },
+  { to: "/contact", label: "문의" },
 ] as const;
 
 export function SiteHeader() {
@@ -16,11 +17,18 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container-narrow flex h-16 items-center justify-between md:h-20">
         <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
-          <span className="font-serif text-2xl font-medium tracking-tight text-foreground">
-            이로이로
+          <span className="flex items-center gap-3">
+            <img
+              src={iroiroMark}
+              alt="iroiro logo"
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-full object-cover ring-1 ring-border/70"
+            />
+            <span className="font-serif text-2xl font-medium tracking-tight text-foreground">iroiro</span>
           </span>
           <span className="hidden text-[11px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
-            iroiro · chipbirdie
+            n잡 도전기
           </span>
         </Link>
 
@@ -37,12 +45,6 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            to="/contact"
-            className="rounded-full bg-foreground px-5 py-2 text-sm text-primary-foreground transition-opacity hover:opacity-90"
-          >
-            상담 신청
-          </Link>
         </nav>
 
         <button

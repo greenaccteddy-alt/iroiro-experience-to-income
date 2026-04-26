@@ -1,26 +1,41 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import craft from "../assets/craft.jpg";
+import craftPhoto from "../assets/craft.jpg";
+import iroiroCraft from "../assets/iroiro-craft.jpg";
 
 export const Route = createFileRoute("/craft")({
   head: () => ({
     meta: [
-      { title: "공방 · 푸어링아트 — 이로이로" },
+      { title: "이로이로 크래프트 | 공방" },
       {
         name: "description",
-        content:
-          "손으로 만드는 시간이 다시 글이 되고, 콘텐츠가 됩니다. 이로이로의 공방, 푸어링아트.",
+        content: "이로이로 크래프트 공방과 클래스, 브랜드 협업을 소개하는 페이지.",
       },
-      { property: "og:title", content: "공방 · 푸어링아트 — 이로이로" },
+      { property: "og:title", content: "이로이로 크래프트 | 공방" },
       {
         property: "og:description",
-        content: "브랜드의 결을 만드는 손의 시간. 푸어링아트 공방 안내.",
+        content: "만드는 시간과 결과물이 브랜드의 결로 이어지는 공방 페이지.",
       },
-      { property: "og:image", content: craft },
+      { property: "og:image", content: craftPhoto },
     ],
   }),
   component: CraftPage,
 });
+
+const offerings = [
+  {
+    title: "원데이 클래스",
+    desc: "처음 시작하는 분도 부담 없이 만들 수 있는 짧은 체험 클래스입니다.",
+  },
+  {
+    title: "정규 클래스",
+    desc: "취향과 속도에 맞춰 나만의 시리즈를 차근차근 쌓아갑니다.",
+  },
+  {
+    title: "브랜드 협업",
+    desc: "브랜드 결에 맞는 오브제와 제작 경험을 함께 기획합니다.",
+  },
+] as const;
 
 function CraftPage() {
   return (
@@ -28,18 +43,28 @@ function CraftPage() {
       <section className="border-b border-border">
         <div className="container-narrow grid items-center gap-12 py-20 md:grid-cols-2 md:py-28">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-terracotta">Craft Studio</p>
-            <h1 className="mt-4 font-serif text-4xl text-balance text-foreground sm:text-5xl">
-              손으로 만드는 시간이,<br />브랜드의 <em className="not-italic text-terracotta">결</em>이 됩니다
+            <div className="inline-flex items-center gap-3 rounded-full border border-border bg-card px-3 py-2 shadow-soft">
+              <img
+                src={iroiroCraft}
+                alt="이로이로 크래프트 로고"
+                width={72}
+                height={72}
+                className="h-12 w-12 rounded-xl object-cover"
+              />
+              <span className="text-xs uppercase tracking-[0.3em] text-terracotta">Craft Studio</span>
+            </div>
+            <h1 className="mt-5 font-serif text-4xl text-balance text-foreground sm:text-5xl">
+              만드는 시간도,
+              <br />
+              브랜드의 결이 됩니다
             </h1>
             <p className="mt-6 text-muted-foreground">
-              푸어링아트는 단순한 취미가 아닙니다. 색을 고르고, 결을 만들고, 기다리는
-              시간 — 그 모든 것이 이로이로의 톤과 콘텐츠로 이어집니다.
+              이로이로 크래프트는 단순한 취미를 넘어서, 만드는 경험과 결과물이 하나의 브랜드 감각으로 이어지는 공방입니다.
             </p>
           </div>
           <img
-            src={craft}
-            alt="푸어링아트 작품"
+            src={craftPhoto}
+            alt="이로이로 크래프트 작업물"
             width={1200}
             height={1000}
             className="rounded-[1.75rem] object-cover shadow-lift"
@@ -49,15 +74,11 @@ function CraftPage() {
 
       <section className="py-24">
         <div className="container-narrow grid gap-6 md:grid-cols-3">
-          {[
-            { title: "원데이 클래스", desc: "처음 시작하는 분을 위한 한 번의 경험. 작품 한 점을 가져갑니다." },
-            { title: "정규 클래스", desc: "꾸준히 색과 결을 다루며 자기만의 시리즈를 완성합니다." },
-            { title: "브랜드 콜라보", desc: "브랜드의 톤에 맞는 푸어링아트 작품을 함께 기획합니다." },
-          ].map((c, i) => (
-            <article key={c.title} className="rounded-3xl border border-border bg-card p-7 shadow-soft">
-              <p className="font-serif text-2xl text-clay">0{i + 1}</p>
-              <h3 className="mt-3 font-serif text-lg text-foreground">{c.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+          {offerings.map((offering, index) => (
+            <article key={offering.title} className="rounded-3xl border border-border bg-card p-7 shadow-soft">
+              <p className="font-serif text-2xl text-clay">0{index + 1}</p>
+              <h3 className="mt-3 font-serif text-lg text-foreground">{offering.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{offering.desc}</p>
             </article>
           ))}
         </div>
@@ -67,14 +88,17 @@ function CraftPage() {
         <div className="container-narrow">
           <div className="rounded-[2rem] bg-sand p-10 text-center sm:p-16">
             <h2 className="font-serif text-3xl text-foreground sm:text-4xl">
-              일정·신청은 카카오채널로
+              일정과 문의는 카카오채널로
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-              월별 클래스 일정과 빈 자리는 카카오채널로 가장 빠르게 안내드립니다.
+              클래스 일정, 비용, 협업 문의는 카카오채널로 가장 빠르게 안내해드립니다.
             </p>
             <div className="mt-8">
-              <Link to="/contact" className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 text-sm text-primary-foreground hover:opacity-90">
-                카카오채널 상담하기 →
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 text-sm text-primary-foreground hover:opacity-90"
+              >
+                카카오채널로 상담하기
               </Link>
             </div>
           </div>
