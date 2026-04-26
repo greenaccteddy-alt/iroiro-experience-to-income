@@ -16,7 +16,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
       <div className="container-narrow flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="group flex items-baseline gap-2" onClick={() => setOpen(false)}>
+        <Link to="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="flex items-center gap-3">
             <img
               src={iroiroMark}
@@ -25,7 +25,14 @@ export function SiteHeader() {
               height={36}
               className="h-9 w-9 rounded-full object-cover ring-1 ring-border/70"
             />
-            <span className="font-serif text-2xl font-medium tracking-tight text-foreground">iroiro</span>
+            <span className="flex items-baseline gap-2 font-sans">
+              <span className="text-lg font-semibold tracking-[0.02em] text-foreground sm:text-xl">
+                이로이로
+              </span>
+              <span className="text-base font-medium uppercase tracking-[0.08em] text-foreground/88 sm:text-lg">
+                IROIRO
+              </span>
+            </span>
           </span>
           <span className="hidden text-[11px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
             N잡 도전기

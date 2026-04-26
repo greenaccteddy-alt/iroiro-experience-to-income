@@ -14,7 +14,12 @@ export function SiteFooter() {
               height={40}
               className="h-10 w-10 rounded-full object-cover ring-1 ring-border/70"
             />
-            <p className="font-serif text-2xl text-foreground">iroiro</p>
+            <p className="flex items-baseline gap-2 font-sans text-foreground">
+              <span className="text-lg font-semibold tracking-[0.02em]">이로이로</span>
+              <span className="text-base font-medium uppercase tracking-[0.08em] text-foreground/88">
+                IROIRO
+              </span>
+            </p>
           </div>
           <p className="mt-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">Chipbirdie N잡 도전기</p>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
