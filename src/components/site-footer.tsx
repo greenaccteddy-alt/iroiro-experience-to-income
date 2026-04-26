@@ -16,7 +16,7 @@ export function SiteFooter() {
             />
             <p className="font-serif text-2xl text-foreground">iroiro</p>
           </div>
-          <p className="mt-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">Chipbirdie n잡 도전기</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.25em] text-muted-foreground">Chipbirdie N잡 도전기</p>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
             메인에서 빠르게 갈라지고, 필요한 곳으로 바로 들어가는 구조로 정리한 홈페이지입니다.
           </p>
@@ -32,7 +32,7 @@ export function SiteFooter() {
             </li>
             <li>
               <Link to="/njob" className="text-foreground/80 hover:text-foreground">
-                n잡 도전하기
+                N잡 도전하기
               </Link>
             </li>
             <li>
@@ -57,7 +57,7 @@ export function SiteFooter() {
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">한눈에 보기</p>
           <ul className="mt-4 space-y-2 text-sm text-foreground/80">
             <li>전자책 읽기</li>
-            <li>n잡 마인드맵 작성</li>
+            <li>N잡 마인드맵 작성</li>
             <li>1:1 코칭</li>
             <li>블로그, 대행사, 공방, 일본어 수업, 인스타툰</li>
           </ul>
@@ -66,7 +66,7 @@ export function SiteFooter() {
       <div className="border-t border-border/60">
         <div className="container-narrow flex flex-col items-start justify-between gap-2 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <span>© {new Date().getFullYear()} iroiro</span>
-          <span>n잡 도전기</span>
+          <span>N잡 도전기</span>
         </div>
       </div>
     </footer>

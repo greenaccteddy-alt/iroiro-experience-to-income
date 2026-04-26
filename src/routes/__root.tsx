@@ -31,16 +31,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "iroiro | n잡 도전기" },
+      { title: "iroiro | N잡 도전기" },
       {
         name: "description",
-        content: "Chipbirdie의 n잡 도전기를 한눈에 보고 바로 이동할 수 있는 홈페이지.",
+        content: "Chipbirdie의 N잡 도전기를 한눈에 보고 바로 이동할 수 있는 홈페이지.",
       },
       { name: "author", content: "Chipbirdie" },
-      { property: "og:title", content: "iroiro | n잡 도전기" },
+      { property: "og:title", content: "iroiro | N잡 도전기" },
       {
         property: "og:description",
-        content: "n잡 도전하기와 Chipbirdie의 n잡 구경하기, 두 갈래로 바로 이동하세요.",
+        content: "N잡 도전하기와 Chipbirdie의 N잡 구경하기, 두 갈래로 바로 이동하세요.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

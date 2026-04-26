@@ -4,7 +4,7 @@ import iroiroMark from "../assets/iroiro-mark.jpg";
 
 const navItems = [
   { to: "/", label: "메인" },
-  { to: "/njob", label: "n잡 도전" },
+  { to: "/njob", label: "N잡 도전" },
   { to: "/agency", label: "대행사" },
   { to: "/craft", label: "공방" },
   { to: "/contact", label: "문의" },
@@ -28,7 +28,7 @@ export function SiteHeader() {
             <span className="font-serif text-2xl font-medium tracking-tight text-foreground">iroiro</span>
           </span>
           <span className="hidden text-[11px] uppercase tracking-[0.25em] text-muted-foreground sm:inline">
-            n잡 도전기
+            N잡 도전기
           </span>
         </Link>
 

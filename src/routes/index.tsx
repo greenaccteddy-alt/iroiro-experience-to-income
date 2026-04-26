@@ -7,13 +7,13 @@ import iroiroJapanese from "../assets/iroiro-japanese.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "iroiro | n잡 도전기" },
+      { title: "iroiro | N잡 도전기" },
       {
         name: "description",
         content:
-          "n잡을 시작해보고 싶은 사람과 Chipbirdie의 n잡 여정을 구경하고 싶은 사람을 위한 메인 페이지.",
+          "N잡을 시작해보고 싶은 사람과 Chipbirdie의 N잡 여정을 구경하고 싶은 사람을 위한 메인 페이지.",
       },
-      { property: "og:title", content: "iroiro | n잡 도전기" },
+      { property: "og:title", content: "iroiro | N잡 도전기" },
       {
         property: "og:description",
         content: "메인 페이지에서 한눈에 원하는 곳으로 바로 이동하세요.",
@@ -26,13 +26,13 @@ export const Route = createFileRoute("/")({
 const startItems = [
   {
     title: "전자책 읽기",
-    description: "n잡의 출발점을 먼저 정리해보기",
+    description: "N잡의 출발점을 먼저 정리해보기",
     to: "/njob",
     icon: BookOpen,
     external: false,
   },
   {
-    title: "n잡 마인드맵 작성",
+    title: "N잡 마인드맵 작성",
     description: "내 방향을 그려보는 첫 단계",
     to: "/njob",
     icon: Map,
@@ -101,7 +101,7 @@ function HomePage() {
         <div className="container-narrow py-20 md:py-28">
           <p className="text-xs uppercase tracking-[0.28em] text-terracotta">iroiro by Chipbirdie</p>
           <h1 className="mt-5 max-w-4xl font-serif text-4xl text-balance text-foreground sm:text-5xl md:text-6xl">
-            n잡 도전기,
+            N잡 도전기,
             <br />
             메인에서 바로 고르세요.
           </h1>
@@ -113,8 +113,8 @@ function HomePage() {
 
       <section className="container-narrow grid gap-8 py-12 md:grid-cols-2 md:py-16">
         <article className="rounded-[2rem] border border-border bg-card p-8 shadow-soft sm:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">1. n잡 도전하기</p>
-          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">n잡 도전하실래요?</h2>
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">1. N잡 도전하기</p>
+          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">N잡 도전하실래요?</h2>
           <p className="mt-4 max-w-md text-muted-foreground">
             시작할 때 필요한 길만 남겼습니다. 전자책, 마인드맵, 코칭으로 바로 들어가세요.
           </p>
@@ -148,9 +148,9 @@ function HomePage() {
         </article>
 
         <article className="rounded-[2rem] bg-foreground p-8 text-primary-foreground shadow-lift sm:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-accent">2. 칩버디의 n잡 구경하기</p>
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-accent">2. 칩버디의 N잡 구경하기</p>
           <h2 className="mt-5 font-serif text-3xl text-primary-foreground sm:text-4xl">
-            이미 하고 있는 n잡이 궁금하다면
+            이미 하고 있는 N잡이 궁금하다면
           </h2>
           <p className="mt-4 max-w-md text-primary-foreground/78">
             블로그부터 대행사, 공방, 일본어 수업, 인스타툰까지 한곳에서 둘러볼 수 있게 모았습니다.
