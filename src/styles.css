@@ -62,7 +62,7 @@
   --terracotta: oklch(0.65 0.13 45);       /* soft orange accent */
   --ink: oklch(0.28 0.025 50);             /* deep warm brown */
 
-  --background: var(--cream);
+  --background: oklch(1 0 0);
   --foreground: var(--ink);
   --card: oklch(1 0 0);
   --card-foreground: var(--ink);
