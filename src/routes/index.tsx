@@ -108,10 +108,10 @@ function HomePage() {
 
       <section className="container-narrow grid gap-8 py-12 md:grid-cols-2 md:py-16">
         <article className="rounded-[2rem] border border-border bg-card p-8 shadow-soft sm:p-10">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">1. N잡 도전하기</p>
-          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">N잡 도전하실래요?</h2>
+          <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">N잡 시작이 막막하다면</p>
+          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">여기서부터 시작하면 됩니다</h2>
           <p className="mt-4 max-w-md text-muted-foreground">
-            시작할 때 필요한 길만 남겼습니다. 전자책, 마인드맵, 코칭으로 바로 들어가세요.
+            전자책으로 방향 잡고, 마인드맵으로 나를 정리하고, 코칭으로 같이 풀어가요
           </p>
 
           <div className="mt-8 space-y-3">
@@ -162,13 +162,13 @@ function HomePage() {
 
         <article className="rounded-[2rem] border border-border bg-sand p-8 text-foreground shadow-soft sm:p-10">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">
-            2. 칩버디의 N잡 구경하기
+            50대 주부 칩버디의 N잡
           </p>
           <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">
-            이미 하고 있는 N잡이 궁금하다면
+            저는 이렇게 하고 있어요
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground">
-            블로그부터 대행사, 공방, 일본어 수업, 인스타툰까지 한곳에서 둘러볼 수 있게 모았습니다.
+            아이 키우느라 멈췄던 시간, 그 후로 하나씩 쌓아왔어요. 지금도 진행 중입니다.
           </p>
 
           <div className="mt-8 space-y-3">
