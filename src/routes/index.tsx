@@ -48,7 +48,7 @@ const startItems = [
 const browseItems = [
   {
     title: "대행사",
-    description: "이로이로 에이전시",
+    description: "이로이로\n에이전시",
     to: "/agency",
   },
   {
@@ -58,12 +58,12 @@ const browseItems = [
   },
   {
     title: "공방",
-    description: "이로이로크래프트",
+    description: "이로이로\n크래프트",
     to: "/craft",
   },
   {
     title: "일본어 모임",
-    description: "이로이로 일본어",
+    description: "이로이로\n일본어",
     to: "/contact",
   },
   {
@@ -101,7 +101,7 @@ function HomePage() {
       <section className="container-narrow grid gap-8 py-12 md:grid-cols-2 md:py-16">
         <article className="rounded-[2rem] border border-border bg-card p-8 shadow-soft sm:p-10">
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">N잡 시작이 막막하다면</p>
-          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">여기서부터 시작하면 됩니다</h2>
+          <h2 className="mt-5 font-serif text-[2.1rem] leading-tight text-foreground sm:text-4xl">여기서부터 시작하면 됩니다</h2>
           <p className="mt-4 max-w-md text-muted-foreground">
             전자책으로 방향 잡고, 마인드맵으로 나를 정리하고, 코칭으로 같이 풀어가요
           </p>
@@ -153,7 +153,7 @@ function HomePage() {
           <p className="text-sm font-medium uppercase tracking-[0.24em] text-terracotta">
             50대 주부 칩버디의 N잡
           </p>
-          <h2 className="mt-5 font-serif text-3xl text-foreground sm:text-4xl">
+          <h2 className="mt-5 font-serif text-[2.1rem] leading-tight text-foreground sm:text-4xl">
             저는 이렇게 하고 있어요
           </h2>
           <p className="mt-4 max-w-md text-muted-foreground">
@@ -166,11 +166,11 @@ function HomePage() {
                 <Link
                   key={item.title}
                   to={item.to}
-                  className="group flex min-h-[9rem] items-center justify-center rounded-2xl border border-border bg-card p-4 text-center transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft sm:min-h-[10rem] sm:p-5"
+                  className="group flex aspect-square items-center justify-center rounded-2xl border border-border bg-card p-4 text-center transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft sm:p-5"
                 >
-                  <div className="space-y-1.5">
+                  <div className="space-y-2 text-center">
                     <p className="text-lg font-bold tracking-[0.02em] text-terracotta">{item.title}</p>
-                    <p className="text-sm font-medium leading-snug text-foreground/88 sm:text-[15px]">
+                    <p className="whitespace-pre-line text-base font-medium leading-snug text-foreground/88 sm:text-[15px]">
                       {item.description}
                     </p>
                   </div>
