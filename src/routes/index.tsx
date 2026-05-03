@@ -166,11 +166,11 @@ function HomePage() {
                 <Link
                   key={item.title}
                   to={item.to}
-                  className="group flex aspect-square flex-col justify-end rounded-2xl border border-border bg-card p-4 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft sm:p-5"
+                  className="group flex min-h-[9rem] items-center justify-center rounded-2xl border border-border bg-card p-4 text-center transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft sm:min-h-[10rem] sm:p-5"
                 >
-                  <div className="space-y-2">
-                    <p className="text-base font-semibold tracking-[0.02em] text-terracotta">{item.title}</p>
-                    <p className="text-sm font-medium leading-snug text-foreground/88 sm:text-base">
+                  <div className="space-y-1.5">
+                    <p className="text-lg font-bold tracking-[0.02em] text-terracotta">{item.title}</p>
+                    <p className="text-sm font-medium leading-snug text-foreground/88 sm:text-[15px]">
                       {item.description}
                     </p>
                   </div>
