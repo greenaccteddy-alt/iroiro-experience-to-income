@@ -96,12 +96,12 @@ function HomePage() {
         <div className="container-narrow py-20 md:py-28">
           <p className="text-xs uppercase tracking-[0.28em] text-terracotta">iroiro by Chipbirdie</p>
           <h1 className="mt-5 max-w-4xl font-serif text-4xl text-balance text-foreground sm:text-5xl md:text-6xl">
-            N잡 도전기,
-            <br />
-            메인에서 바로 고르세요.
+            나도 N잡 해볼까?
           </h1>
-          <p className="mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            이야기는 줄이고, 방문자가 한눈에 원하는 곳으로 바로 갈 수 있게 정리했습니다.
+          <p className="mt-6 max-w-2xl whitespace-pre-line text-base text-muted-foreground sm:text-lg">
+            우리의 경험, 이미 충분해요.
+            {"\n"}이제 수익으로 바꿀 차례!
+            {"\n"}시작해볼까요?
           </p>
         </div>
       </section>
