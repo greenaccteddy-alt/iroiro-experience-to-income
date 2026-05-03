@@ -25,22 +25,22 @@ export const Route = createFileRoute("/")({
 
 const startItems = [
   {
-    title: "전자책 읽기",
-    description: "N잡의 출발점을 먼저 정리해보기",
+    title: "전자책 무료로 읽기",
+    description: "50대 주부, 마인드맵 한 장으로 시작한 N잡 이야기",
     to: "/njob",
     href: null,
     icon: BookOpen,
   },
   {
-    title: "N잡 마인드맵 작성",
-    description: "내 방향을 그려보는 첫 단계",
+    title: "N잡 마인드맵 그려보기",
+    description: "칩버디표 앱으로 내 방향 한 장에 정리하기",
     to: null,
     href: "https://njob-mindmap-iroiro.netlify.app/",
     icon: Map,
   },
   {
-    title: "1:1 코칭",
-    description: "카카오채널로 바로 상담하기",
+    title: "1:1 코칭 받아보기",
+    description: "카카오채널로 바로 연결됩니다",
     to: "/contact",
     href: null,
     icon: MessageCircleMore,
@@ -131,9 +131,6 @@ function HomePage() {
                       <p className="text-sm text-muted-foreground">{item.description}</p>
                     </div>
                   </div>
-                  <span className="text-sm text-muted-foreground transition-transform group-hover:translate-x-1">
-                    바로가기
-                  </span>
                 </>
               );
 
