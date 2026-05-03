@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, ExternalLink, Map, MessageCircleMore, PenSquare, Store } from "lucide-react";
+import { BookOpen, Coins, ExternalLink, Map, MessageCircleMore, PenSquare, Store } from "lucide-react";
 
 import heroBg from "../assets/hero-bg.jpg";
 import iroiroJapanese from "../assets/iroiro-japanese.jpg";
@@ -49,35 +49,35 @@ const startItems = [
 
 const browseItems = [
   {
-    title: "블로그",
-    description: "Chipbirdie의 기록 둘러보기",
-    to: "/njob",
-    icon: PenSquare,
-  },
-  {
     title: "대행사",
-    description: "블로그 소개와 연결된 작업 보기",
+    description: "이로이로 에이전시",
     to: "/agency",
     icon: ExternalLink,
   },
   {
+    title: "블로그",
+    description: "테디버디",
+    to: "/njob",
+    icon: PenSquare,
+  },
+  {
     title: "공방",
-    description: "플레이스 링크 대신 공방 페이지로 이동",
+    description: "이로이로크래프트",
     to: "/craft",
     icon: Store,
   },
   {
-    title: "일본어 수업",
-    description: "카카오채널 문의로 이어지기",
+    title: "일본어 모임",
+    description: "이로이로 일본어",
     to: "/contact",
     icon: MessageCircleMore,
     logo: iroiroJapanese,
   },
   {
-    title: "인스타툰",
-    description: "현재는 소개 페이지에서 먼저 보기",
+    title: "원고료",
+    description: "크몽",
     to: "/contact",
-    icon: ExternalLink,
+    icon: Coins,
   },
 ] as const;
 
@@ -168,39 +168,39 @@ function HomePage() {
             아이 키우느라 멈췄던 시간, 그 후로 하나씩 쌓아왔어요. 지금도 진행 중입니다.
           </p>
 
-          <div className="mt-8 space-y-3">
-            {browseItems.map((item) => {
+          <div className="mt-8 grid grid-cols-2 gap-4">
+            {browseItems.map((item, index) => {
               const Icon = item.icon;
+              const isLastOddItem = index === browseItems.length - 1 && browseItems.length % 2 === 1;
 
               return (
                 <Link
                   key={item.title}
                   to={item.to}
-                  className="group flex min-h-20 items-center justify-between gap-4 rounded-2xl border border-border bg-card px-5 py-4 transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft"
+                  className={`group flex aspect-square flex-col justify-between rounded-2xl border border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft ${
+                    isLastOddItem ? "col-span-2 mx-auto w-full max-w-[calc(50%-0.5rem)]" : ""
+                  }`}
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-background text-foreground">
+                  <div className="flex items-start justify-between gap-3">
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-foreground">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <div>
-                      <p className="text-base font-medium text-foreground">{item.title}</p>
-                      <p className="text-sm text-muted-foreground">{item.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3">
                     {"logo" in item ? (
                       <img
                         src={item.logo}
                         alt={`${item.title} logo`}
                         width={56}
                         height={56}
-                        className="hidden h-12 w-12 rounded-xl object-cover ring-1 ring-border sm:block"
+                        className="h-11 w-11 rounded-xl object-cover ring-1 ring-border"
                       />
                     ) : null}
-                    <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-accent text-center text-xs font-semibold text-accent-foreground transition-transform group-hover:translate-x-0.5">
-                      이동
-                    </span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="text-sm font-medium tracking-[0.06em] text-terracotta">{item.title}</p>
+                    <p className="text-xl font-semibold leading-snug text-foreground sm:text-2xl">
+                      {item.description}
+                    </p>
                   </div>
                 </Link>
               );
