@@ -1,9 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { BookOpen, Coins, ExternalLink, Map, MessageCircleMore, PenSquare, Store } from "lucide-react";
+import { BookOpen, Map, MessageCircleMore } from "lucide-react";
 
 import heroBg from "../assets/hero-bg.jpg";
-import iroiroJapanese from "../assets/iroiro-japanese.jpg";
-
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -52,32 +50,26 @@ const browseItems = [
     title: "대행사",
     description: "이로이로 에이전시",
     to: "/agency",
-    icon: ExternalLink,
   },
   {
     title: "블로그",
     description: "테디버디",
     to: "/njob",
-    icon: PenSquare,
   },
   {
     title: "공방",
     description: "이로이로크래프트",
     to: "/craft",
-    icon: Store,
   },
   {
     title: "일본어 모임",
     description: "이로이로 일본어",
     to: "/contact",
-    icon: MessageCircleMore,
-    logo: iroiroJapanese,
   },
   {
     title: "원고료",
     description: "크몽",
     to: "/contact",
-    icon: Coins,
   },
 ] as const;
 
@@ -169,36 +161,16 @@ function HomePage() {
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4">
-            {browseItems.map((item, index) => {
-              const Icon = item.icon;
-              const isLastOddItem = index === browseItems.length - 1 && browseItems.length % 2 === 1;
-
+            {browseItems.map((item) => {
               return (
                 <Link
                   key={item.title}
                   to={item.to}
-                  className={`group flex aspect-square flex-col justify-between rounded-2xl border border-border bg-card p-5 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft ${
-                    isLastOddItem ? "col-span-2 mx-auto w-full max-w-[calc(50%-0.5rem)]" : ""
-                  }`}
+                  className="group flex aspect-square flex-col justify-end rounded-2xl border border-border bg-card p-4 text-left transition-all hover:-translate-y-0.5 hover:border-foreground/20 hover:shadow-soft sm:p-5"
                 >
-                  <div className="flex items-start justify-between gap-3">
-                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-foreground">
-                      <Icon className="h-5 w-5" />
-                    </span>
-                    {"logo" in item ? (
-                      <img
-                        src={item.logo}
-                        alt={`${item.title} logo`}
-                        width={56}
-                        height={56}
-                        className="h-11 w-11 rounded-xl object-cover ring-1 ring-border"
-                      />
-                    ) : null}
-                  </div>
-
                   <div className="space-y-2">
-                    <p className="text-sm font-medium tracking-[0.06em] text-terracotta">{item.title}</p>
-                    <p className="text-xl font-semibold leading-snug text-foreground sm:text-2xl">
+                    <p className="text-base font-semibold tracking-[0.02em] text-terracotta">{item.title}</p>
+                    <p className="text-sm font-medium leading-snug text-foreground/88 sm:text-base">
                       {item.description}
                     </p>
                   </div>
